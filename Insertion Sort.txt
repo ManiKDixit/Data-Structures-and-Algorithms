@@ -1,0 +1,37 @@
+class InsertionSort {
+    
+    public void InsertionSort(int[] arr)
+    {
+        //We start with the 1st index as that's where we split the array in two parts - sorted and unsorted
+        
+        for(int i = 1 ; i < arr.length ; i++)
+        {
+            int temp = arr[i];
+            int j = i-1 ;
+            while(j >= 0 && arr[j] > temp)
+            {
+                arr[j+1] = arr[j];
+                arr[j] = temp;
+                j = j-1 ;
+            }
+            
+            arr[j+1] = temp;
+        }
+    }
+    
+    public void printArray(int[] arr)
+	{
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i] + " ");
+		
+		}
+	}
+    
+    public static void main(String[] args) {
+        InsertionSort is = new InsertionSort();
+        int[] arr1 = {7,9,3,8,2,1,4};
+        is.InsertionSort(arr1);
+        System.out.println("The Sorted array is - "); 
+        is.printArray(arr1);
+    }
+}
